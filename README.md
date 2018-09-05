@@ -8,7 +8,7 @@ This is a simple temperature/humidity monitoring use case leveraging 433mhz wire
 * Raspberry Pi 3B+ 
 
 ## Capturing wireless 433mhz signals:
-1. Install "rtl-sdr" on raspberry pi following instructions here: https://osmocom.org/projects/rtl-sdr/wiki/Rtl-sdr 
+### 1. Install "rtl-sdr" on raspberry pi following instructions here: https://osmocom.org/projects/rtl-sdr/wiki/Rtl-sdr 
 
 `git clone git://git.osmocom.org/rtl-sdr.git`
 
@@ -17,8 +17,6 @@ Install dev packages for libusb1.0
 
 Note: I had to install cmake first on my RBPi. 
 `sudo apt-get install cmake`
-
-
 
 ```
 cd rtl-sdr/
@@ -29,6 +27,24 @@ make
 sudo make install
 sudo ldconfig
 ```
+### 2. Install "rtl_433 on raspberry pi https://github.com/merbanan/rtl_433
+Install dependencies: 
+`sudo apt-get install libtool libusb-1.0.0-dev librtlsdr-dev rtl-sdr build-essential autoconf cmake pkg-config`
 
+from project root
+`git clone https://github.com/merbanan/rtl_433`
 
-2. Install "rtl_433 on raspberry pi https://github.com/merbanan/rtl_433
+```
+cd rtl_433/
+mkdir build
+cd build
+cmake ../
+make
+sudo make install
+```
+Now, let's test it out. Make sure the USB antennae is plugged in, then From the command line, run the following command: 
+`rtl_433 -R 20 -F json -d 0`
+
+The rtl_433 program should initialize, find the 
+
+### 3. 
