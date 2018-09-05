@@ -1,5 +1,4 @@
 # 433temp-azure-iot
-f6cd6a7effe8556d14efdddc3264c64817a4b7fc
 433mhz temperature sensors, Raspberry Pi, Azure IoT Hub... what's not to love? 
 
 This is a simple temperature/humidity monitoring use case leveraging 433mhz wireless temp/humidty sensors, Raspberry Pi equipped with a USB antennae, and using python to push values to Azure IoT hub. From there, the possiblities are endless, but I show how to stream data directly into Power BI. 
