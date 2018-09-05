@@ -1,0 +1,3 @@
+sudo crontab -e
+
+@reboot sudo python3 /home/pi/Desktop/rtl_433toAzure.py
