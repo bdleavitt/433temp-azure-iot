@@ -44,6 +44,31 @@ sudo make install
 Now, let's test it out. Make sure the USB antennae is plugged in, then From the command line, run the following command: 
 `rtl_433 -R 20 -F json -d 0`
 
-The rtl_433 program should initialize, find the 
+The rtl_433 program should initialize, find the USB sensor, and begin reading sensor data. 
 
-### 3. 
+### 3. Push the data into IoT hub. 
+Install Boost python library:
+https://github.com/Azure/azure-iot-sdk-python/blob/master/doc/python-devbox-setup.md#installs-needed-to-compile-the-sdks-for-python-from-souce-code
+
+`git clone --recursive https://github.com/Azure/azure-iot-sdk-python.git`
+
+```
+sudo apt-get update
+sudo apt-get install -y git cmake build-essential curl libcurl4-openssl-dev libssl-dev uuid-dev
+```
+Navigate to the build_all/linux directory. Run setup.sh for appropriate python version. 
+```
+./setup.sh --python-version 3.5
+```
+Run the build script:
+```
+./build.sh --build-python 3.5
+```
+
+
+
+Install the Auzre IoT Device SDK for python. 
+`sudo pip3 install azure-iothub-device-client`
+
+
+
