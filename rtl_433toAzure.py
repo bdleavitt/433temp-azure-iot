@@ -56,9 +56,9 @@ def pushToEventHub(sbs):
                 break
             
 # Azure Event Hub connection string
-service_namespace = 'bdlfkciot' 
-key_name = 'storetocloud' # SharedAccessKeyName from Azure portal
-key_value = '36OuN2vICYI8hyw5Sygi/zI4j9PIPbBmRpQpt1rYM6o=' # SharedAccessKey from Azure portal
+service_namespace = '<service namespace goes here>' 
+key_name = '<key name goes here>' # SharedAccessKeyName from Azure portal
+key_value = '<key value goes here>' # SharedAccessKey from Azure portal
 sbs = ServiceBusService(service_namespace, shared_access_key_name=key_name,shared_access_key_value=key_value)
 
 proc = subprocess.Popen(['rtl_433', '-R', '20', '-F', 'json','-d','0'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
